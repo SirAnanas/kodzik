@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Zadanie
+        </title>
+        <script>
+            window.onload = function() {
+                var canvas = document.getElementById('canv');
+                var ctx = canvas.getContext("2d");
+                ctx.beginPath();
+                var gradient = ctx.createLinearGradient(0, 0, 0, 600);
+                gradient.addColorStop(0, "blue");
+                gradient.addColorStop(1, "lightblue");
+                ctx.fillStyle = gradient;
+                ctx.rect(0,0,800,600);
+                ctx.fill();
+                var fale = document.getElementById('fale');
+                var ksiezyc = document.getElementById('ksiezyc');
+                var chmury = document.getElementById('chmury');
+                ctx.drawImage(fale, 0, 300);
+                ctx.drawImage(ksiezyc, 400, 150);
+                ctx.drawImage(chmury, 80, 50)
+            }
+        </script>
+        <style>
+            #fale
+            {
+                display: none;
+            }
+            #ksiezyc {
+                display: none;
+            }
+            #chmury {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canv" width="800" height="600">
+
+        </canvas>
+        <img src="fale.png" id="fale">
+        <img src="ksiezyc.png" id="ksiezyc">
+        <img src="chmury.png" id="chmury">
+    </body>
+</html>
