@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Zadanie
+        </title>
+        <script>
+            window.onload = function() {
+                var canvas = document.getElementById('canv');
+                var ctx = canvas.getContext("2d");
+                ctx.beginPath();
+                var gradient = ctx.createLinearGradient(0, 0, 0, 600);
+                gradient.addColorStop(0, "cyan");
+                gradient.addColorStop(1, "blue");
+                ctx.fillStyle = gradient;
+                ctx.rect(0,0,800,600);
+                ctx.fill();
+                var barca = document.getElementById('barca');
+                var gracze = document.getElementById('players');
+                var real = document.getElementById('real');
+                ctx.drawImage(barca, 0, 0, 150, 150);
+                ctx.drawImage(real, 650, 0, 150, 150);
+                ctx.drawImage(gracze, 100, 150)
+            }
+        </script>
+        <style>
+            #barca {
+                display: none;
+            }
+            #players {
+                display: none;
+            }
+            #real {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canv" width="800" height="600">
+
+        </canvas>
+        <img src="barca.png" id="barca">
+        <img src="players.png" id="players">
+        <img src="real.png" id="real">
+    </body>
+</html>
